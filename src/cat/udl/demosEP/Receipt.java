@@ -33,7 +33,7 @@ class Receipt {
             throw new IsClosedException ("Recibo ya cerrado");
         else {
             BigDecimal cent = new BigDecimal("100");
-            total = total.multiply(percent).divide(cent);
+            total = total.add(total.multiply(percent).divide(cent));
             isClosed = true;
         }
     }

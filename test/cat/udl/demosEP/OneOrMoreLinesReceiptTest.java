@@ -38,7 +38,7 @@ class OneOrMoreLinesReceiptTest implements ReceiptInterfaceTest {
     public void addTaxesTest() throws IsClosedException {
         BigDecimal perc = new BigDecimal("15");
         receipt.addTaxes(perc);
-        assertEquals(new BigDecimal("9.6"),receipt.total());
+        assertEquals(new BigDecimal("73.6"),receipt.total());
     }
 
     @Override
