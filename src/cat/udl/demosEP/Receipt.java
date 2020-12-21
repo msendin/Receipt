@@ -3,6 +3,7 @@ package cat.udl.demosEP;
 import cat.udl.demosEP.exceptions.IsClosedException;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,12 +34,12 @@ class Receipt {
             throw new IsClosedException ("Recibo ya cerrado");
         else {
             BigDecimal cent = new BigDecimal("100");
-            total = total.add(total.multiply(percent).divide(cent));
+            total = total.add(total.multiply(percent).divide(cent,2, RoundingMode.CEILING));
             isClosed = true;
         }
     }
 
-    BigDecimal total() {
+    BigDecimal getTotal() {
         return total;
     }
 

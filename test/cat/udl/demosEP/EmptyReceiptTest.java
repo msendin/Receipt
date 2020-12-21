@@ -23,7 +23,7 @@ class EmptyReceiptTest implements ReceiptInterfaceTest {
     public void addLineTest() throws IsClosedException {
         BigDecimal p = new BigDecimal("100");
         receipt.addLine(p,10);
-        assertEquals(new BigDecimal("1000"),receipt.total());
+        assertEquals(new BigDecimal("1000"),receipt.getTotal());
     }
 
     @Override
@@ -31,7 +31,7 @@ class EmptyReceiptTest implements ReceiptInterfaceTest {
     public void addTaxesTest() throws IsClosedException {
         BigDecimal perc = new BigDecimal("15");
         receipt.addTaxes(perc);
-        assertEquals(new BigDecimal("0"),receipt.total());
+        assertEquals(new BigDecimal("0"),receipt.getTotal());
     }
 
     @Override
