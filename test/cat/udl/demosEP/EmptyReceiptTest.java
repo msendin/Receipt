@@ -37,7 +37,7 @@ class EmptyReceiptTest implements ReceiptInterfaceTest {
     @Override
     @Test
     public void getIsClosedExceptionTest() {
-        Throwable exception = assertThrows(IsClosedException.class,
+        assertThrows(IsClosedException.class,
                 () -> {
                     BigDecimal perc = new BigDecimal("15.00");
                     receipt.addTaxes(perc);
