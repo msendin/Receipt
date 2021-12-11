@@ -7,19 +7,19 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
-class Receipt {
+public class Receipt {
 
     private List<ReceiptLine> listOfProducts;
     private BigDecimal total;
     private boolean isClosed;
 
-    Receipt() {
+    public Receipt() {
         listOfProducts = new ArrayList<>();
         total = new BigDecimal("0.00");
         isClosed = false;
     }
 
-    void addLine(BigDecimal pricePerUnit, int numUnits) throws IsClosedException {
+    public void addLine(BigDecimal pricePerUnit, int numUnits) throws IsClosedException {
         if (isClosed)
             throw new IsClosedException("Recibo ya cerrado");
         else {
@@ -29,7 +29,7 @@ class Receipt {
         }
     }
 
-    void addTaxes(BigDecimal percent) throws IsClosedException {
+    public void addTaxes(BigDecimal percent) throws IsClosedException {
         if (isClosed)
             throw new IsClosedException ("Recibo ya cerrado");
         else {

@@ -14,8 +14,9 @@ class OneOrMoreLinesReceiptTest implements ReceiptInterfaceTest {
 
     Receipt receipt;
 
+    @Override
     @BeforeEach
-    void setUp() throws IsClosedException {
+    public void setUp() throws IsClosedException {
         receipt = new Receipt();
 
         BigDecimal p = new BigDecimal("10.00");
@@ -41,15 +42,4 @@ class OneOrMoreLinesReceiptTest implements ReceiptInterfaceTest {
         assertEquals(new BigDecimal("73.60"),receipt.getTotal());
     }
 
-    @Override
-    @Test
-    public void getIsClosedExceptionTest() {
-        assertThrows(IsClosedException.class,
-                () -> {
-                    BigDecimal perc = new BigDecimal("15.00");
-                    receipt.addTaxes(perc);
-                    BigDecimal p = new BigDecimal("100.00");
-                    receipt.addLine(p,10);
-                });
-    }
-}
+ }

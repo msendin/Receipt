@@ -13,8 +13,9 @@ class EmptyReceiptTest implements ReceiptInterfaceTest {
 
     Receipt receipt;
 
+    @Override
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         receipt = new Receipt();
     }
 
@@ -32,18 +33,6 @@ class EmptyReceiptTest implements ReceiptInterfaceTest {
         BigDecimal perc = new BigDecimal("15.00");
         receipt.addTaxes(perc);
         assertEquals(new BigDecimal("0.00"),receipt.getTotal());
-    }
-
-    @Override
-    @Test
-    public void getIsClosedExceptionTest() {
-        assertThrows(IsClosedException.class,
-                () -> {
-                    BigDecimal perc = new BigDecimal("15.00");
-                    receipt.addTaxes(perc);
-                    BigDecimal p = new BigDecimal("100.00");
-                    receipt.addLine(p,10);
-                });
     }
 
 }
