@@ -14,7 +14,6 @@ class OneOrMoreLinesReceiptTest implements ReceiptInterfaceTest {
 
     Receipt receipt;
 
-    @Override
     @BeforeEach
     public void setUp() throws IsClosedException {
         receipt = new Receipt();

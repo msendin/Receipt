@@ -13,9 +13,6 @@ public interface ReceiptInterfaceTest {
 
     Receipt receipt = new Receipt();
 
-    @BeforeEach
-    void setUp() throws IsClosedException;
-
     @Test
     void addLineTest() throws IsClosedException;
 

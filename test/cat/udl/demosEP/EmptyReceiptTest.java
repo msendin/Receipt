@@ -13,7 +13,6 @@ class EmptyReceiptTest implements ReceiptInterfaceTest {
 
     Receipt receipt;
 
-    @Override
     @BeforeEach
     public void setUp() {
         receipt = new Receipt();
