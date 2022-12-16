@@ -15,18 +15,20 @@ public interface ReceiptInterfaceTest {
 
     @Test
     void addLineTest() throws IsClosedException;
+    // Checks the addLine() method
 
     @Test
     void addTaxesTest() throws IsClosedException;
+    // Checks the addTaxes() method
 
     @Test
     default void getIsClosedExceptionTest() {
+        BigDecimal perc = new BigDecimal("15.00");
+        BigDecimal p = new BigDecimal("100.00");
         assertThrows(IsClosedException.class,
-                () -> {
-                    BigDecimal perc = new BigDecimal("15.00");
-                    receipt.addTaxes(perc);
-                    BigDecimal p = new BigDecimal("100.00");
-                    receipt.addLine(p,10);
+                () -> { receipt.addTaxes(perc);
+                        receipt.addLine(p,10);
                 });
     }
+    // Checks if the IsClosedException throws adequately
 }
