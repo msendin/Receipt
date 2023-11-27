@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Receipt {
 
-    private List<ReceiptLine> listOfProducts;
+    private final List<ReceiptLine> listOfProducts;
     private BigDecimal total;
     private boolean isClosed;
 
