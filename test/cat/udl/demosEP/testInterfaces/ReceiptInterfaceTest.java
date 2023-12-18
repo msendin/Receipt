@@ -23,6 +23,7 @@ public interface ReceiptInterfaceTest {
 
     @Test
     default void getIsClosedExceptionTest() {
+    // Checks if the IsClosedException throws adequately
         BigDecimal perc = new BigDecimal("15.00");
         BigDecimal p = new BigDecimal("100.00");
         assertThrows(IsClosedException.class,
@@ -30,5 +31,4 @@ public interface ReceiptInterfaceTest {
                         receipt.addLine(p,10);
                 });
     }
-    // Checks if the IsClosedException throws adequately
 }
