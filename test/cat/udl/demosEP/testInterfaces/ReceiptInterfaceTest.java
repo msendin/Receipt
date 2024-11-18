@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public interface ReceiptInterfaceTest {
 
-    Receipt receipt = new Receipt();
+    final Receipt receipt = new Receipt();
 
     @Test
     void addLineTest() throws IsClosedException;
