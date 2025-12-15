@@ -2,7 +2,6 @@ package cat.udl.demosEP.testInterfaces;
 
 import cat.udl.demosEP.Receipt;
 import cat.udl.demosEP.exceptions.IsClosedException;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -11,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public interface ReceiptInterfaceTest {
 
-    Receipt receipt = new Receipt();
 
     @Test
     void addLineTest() throws IsClosedException;
@@ -24,6 +22,7 @@ public interface ReceiptInterfaceTest {
     @Test
     default void getIsClosedExceptionTest() {
     // Checks if the IsClosedException throws adequately
+        Receipt receipt = new Receipt();
         BigDecimal perc = new BigDecimal("15.00");
         BigDecimal p = new BigDecimal("100.00");
         assertThrows(IsClosedException.class,
