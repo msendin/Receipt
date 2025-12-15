@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class OneOrMoreLinesReceiptTest implements ReceiptInterfaceTest {
 
@@ -40,5 +39,4 @@ class OneOrMoreLinesReceiptTest implements ReceiptInterfaceTest {
         receipt.addTaxes(perc);
         assertEquals(new BigDecimal("73.60"),receipt.getTotal());
     }
-
  }
